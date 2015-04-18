@@ -27,7 +27,7 @@ class UploadServiceSpec extends Specification with Mockito {
       val multipartBody = MultipartFormData(Map[String, Seq[String]](), files, Seq[BadPart](), Seq[MissingFilePart]())
       val fakeRequest = FakeRequest[MultipartFormData[Files.TemporaryFile]]("POST", "/", FakeHeaders(), multipartBody)
       val success = UploadService.uploadFile(fakeRequest)
-      success must beEqualTo("File uploaded")
+      success must beEqualTo("File(UploadServiceSpec.scala) uploaded")
     }
     
     "uploadFile returns (Missing file)" in new WithApplication {

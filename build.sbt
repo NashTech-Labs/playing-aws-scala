@@ -21,7 +21,7 @@ ScoverageSbtPlugin.ScoverageKeys.coverageExcludedPackages := "<empty>;Reverse.*;
 
 ScoverageSbtPlugin.ScoverageKeys.coverageMinimum := 80
 
-ScoverageSbtPlugin.ScoverageKeys.coverageFailOnMinimum := true
+ScoverageSbtPlugin.ScoverageKeys.coverageFailOnMinimum := false
 
 ScoverageSbtPlugin.ScoverageKeys.coverageHighlighting := {
 	if (scalaBinaryVersion.value == "2.10") false
