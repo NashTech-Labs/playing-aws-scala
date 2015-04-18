@@ -165,6 +165,14 @@ trait S3Utility {
 ```
 
 -----------------------------------------------------------------------
+###AWS credentials! Make sure about environment or configuration
+-----------------------------------------------------------------------
+```
+export AWS_ACCESS_KEY_ID=<ACCESS_KEY>
+export AWS_SECRET_KEY=<SECRET_KEY>
+```
+
+-----------------------------------------------------------------------
 ###Build and Run the application
 -----------------------------------------------------------------------
 * To run the Play Framework, you need JDK 6 or later
