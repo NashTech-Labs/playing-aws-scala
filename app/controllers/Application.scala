@@ -14,7 +14,7 @@ trait Application {
   val uploadService: UploadService
 
   def index = Action { implicit request =>
-    Ok(views.html.index("Playing MultipartFormData"))
+    Ok(views.html.index("Playing AWS Scala"))
   }
 
   def upload = Action(parse.multipartFormData) { implicit request =>
