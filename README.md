@@ -25,7 +25,7 @@ Though AWScala objects basically extend AWS SDK for Java APIs, you can use them 
 - Multipart form upload handlers looks like this:
 [Application.scala](https://github.com/knoldus/playing-aws-scala/blob/master/app/controllers/Application.scala)
 
-```
+```scala
   val uploadService: UploadService
 
   def upload = Action(parse.multipartFormData) { implicit request =>
@@ -37,7 +37,7 @@ Though AWScala objects basically extend AWS SDK for Java APIs, you can use them 
 
 - Service for upload file looks like this:
 [UploadService.scala](https://github.com/knoldus/playing-aws-scala/blob/master/app/services/UploadService.scala)
-```
+```scala
   /**
    * Get file from the request and move it in your location
    *
@@ -63,7 +63,7 @@ Though AWScala objects basically extend AWS SDK for Java APIs, you can use them 
 ###Test Code for Controller and Service
 ------------------------------------------------------
 [ApplicationSpec.scala](https://github.com/knoldus/playing-aws-scala/blob/master/test/ApplicationSpec.scala)
-```
+```scala
 "should be valid" in new WithApplication {
   val request = mock[Request[MultipartFormData[TemporaryFile]]]
   mockedUploadService.uploadFile(request) returns "File Uploaded"
@@ -73,7 +73,7 @@ Though AWScala objects basically extend AWS SDK for Java APIs, you can use them 
 ```
 
 [UploadServiceSpec.scala](https://github.com/knoldus/playing-aws-scala/blob/master/test/services/UploadServiceSpec.scala)
-```
+```scala
 "UploadService" should {
     "uploadFile returns (File uploaded)" in new WithApplication {
       val files = Seq[FilePart[TemporaryFile]](FilePart("file", "UploadServiceSpec.scala", None, TemporaryFile("file", "spec")))
@@ -94,7 +94,7 @@ Though AWScala objects basically extend AWS SDK for Java APIs, you can use them 
 ```
 
 -----------------------------------------------------------------------
-###Build and Run the application :-
+###Build and Run the application
 -----------------------------------------------------------------------
 * To run the Play Framework, you need JDK 6 or later
 * Install Typesafe Activator if you do not have it already. You can get it from [here](http://www.playframework.com/download) 
@@ -107,12 +107,6 @@ Though AWScala objects basically extend AWS SDK for Java APIs, you can use them 
 -----------------------------------------------------------------------
 * Execute `$ ./activator clean coverage test` to test
 * Execute `$ ./activator coverageReport` to generate coverage report
-
-File Upload Form
-![alt tag](/public/images/multipartform.png)
-
-Test Coverage
-![alt tag](/public/images/code_coverage.png)
 
 -----------------------------------------------------------------------
 ###References :-
