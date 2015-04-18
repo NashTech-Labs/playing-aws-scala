@@ -1,14 +1,14 @@
 # playing-aws-scala
 A simple example of Amazon Web Services in the Scala way with Play Framework and [AWScala](https://github.com/seratch/AWScala)
 
-#[AWScala](https://github.com/seratch/AWScala): AWS SDK on the Scala REPL
+###[AWScala](https://github.com/seratch/AWScala): AWS SDK on the Scala REPL
 
 AWScala enables Scala developers to easily work with Amazon Web Services in the Scala way.
 
 Though AWScala objects basically extend AWS SDK for Java APIs, you can use them with less stress on Scala REPL or ```sbt console```.
 
 -----------------------------------------------------
-#AWScala Supported Services
+###AWScala Supported Services
 -----------------------------------------------------
 - AWS Identity and Access Management (IAM)
 - AWS Security Token Service (STS)
