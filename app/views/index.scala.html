@@ -1,0 +1,44 @@
+@(message: String)(implicit flash: Flash)
+
+@main("Welcome to Play") {
+
+	<!-- Begin page content -->
+	<div class="container">
+		<div class="page-header">
+			<h3>
+				A basic example to handle and test MultipartFormData request in Play Framework 2.3.8
+			</h3>
+		</div>
+		
+		<div class="row well">
+			<div class="col-lg-12">
+				@helper.form(action = routes.Application.upload, 'enctype -> "multipart/form-data") {
+					<div class="form-group">
+						<label for="file">File</label>
+						<input type="file" id="file" name="file">
+						<p class="help-block">Select file for upload.</p>
+					</div>
+					
+					<button type="submit" class="btn btn-info">Upload</button>
+                }
+			</div>
+		</div>
+		
+		<br>
+		<div class="row">
+			@if(flash.get("message") != None) {
+				<div class="alert alert-warning alert-dismissible" role="alert">
+  					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  					<strong>Result!</strong> @flash.get("message").
+				</div>
+			}
+		</div>
+		
+		<br>
+		<div class="row">
+			<p>The standard way to upload files in a web application is to use a form with a special multipart/form-data encoding, which lets you mix standard form data with file attachment data.
+			Please note: the HTTP method used to submit the form must be POST (not GET).</p>
+		</div>
+		
+    </div>
+}
